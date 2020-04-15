@@ -1,5 +1,5 @@
 # PhotonPCB
-Method that employ Anycubic Photon DLP printer for the creation of printed circuit boards (PCB)
+Method that employs a Anycubic Photon DLP printer for the creation of printed circuit boards (PCB)
 
 ## 1. PCB design
 
