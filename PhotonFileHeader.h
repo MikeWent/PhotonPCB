@@ -82,10 +82,13 @@ public:
 
         layerHeightMilimeter_ = ds.readFloat();
         exposureTimeSeconds_ = ds.readFloat();
+	exposureTimeSeconds_ = 1;
         exposureBottomTimeSeconds_ = ds.readFloat();
+	exposureBottomTimeSeconds_ = 1200;
 
         offTimeSeconds_ = ds.readFloat();
         bottomLayers_ = ds.readInt();
+	bottomLayers_ = 1;
 
         resolutionX_ = ds.readInt();
         resolutionY_ = ds.readInt();
@@ -94,6 +97,7 @@ public:
         layersDefinitionOffsetAddress_ = ds.readInt();
 
         numberOfLayers_ = ds.readInt();
+        numberOfLayers_ = 1;
 
         previewTwoOffsetAddress_ = ds.readInt();
         printTimeSeconds_ = ds.readInt();

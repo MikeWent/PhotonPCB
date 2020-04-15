@@ -132,9 +132,9 @@ std::string getModel()
 
 int main(int argc, char * argv[])
 {
-	if (argc != 3)
+	if (argc != 4)
 	{
-		std::cerr << "\nUsage: PngToPhoton <input-1440x2560.png> <output.photon>\n"
+		std::cerr << "\nUsage: PngToPhoton <input-1440x2560.png> <output.photon> <exposure_time_in_seconds>\n"
 		"To read data from STDIN use '-' as filename.\n"
 		"To write data to STDOUT use '-' as filename.\n\n"
 		"White and transparent areas of the image are treated as voids.\n"
@@ -153,6 +153,9 @@ int main(int argc, char * argv[])
 	PhotonFilePreview previewOne(photonFileHeader.getPreviewOneOffsetAddress(), bufferModel);
 	PhotonFilePreview previewTwo(photonFileHeader.getPreviewTwoOffsetAddress(), bufferModel);
 	
+	photonFileHeader.setExposureBottomTimeSeconds(atoi(argv[3]));
+	printf("\nExposure time: %d \n",atoi(argv[3]));
+
 	PhotonFilePrintParameters photonFilePrintParameters;
 	if (photonFileHeader.getVersion() > 1) 
 	{
