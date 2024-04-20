@@ -17,7 +17,7 @@
 #endif // WIN32
 
 
-
+#include <cstdint>
 #include <vector>
 #include <array>
 #include <set>
